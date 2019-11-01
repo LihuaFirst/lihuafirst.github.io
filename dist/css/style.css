@@ -1,7 +1,8 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
-/* Variables */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap");
+/* Variables: before import Bootstrap */
 /* Variables */
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -304,7 +305,7 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
   line-height: 1.2; }
 
@@ -7026,12 +7027,69 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-/* Import Component styles */
-/* Import layout styles */
+.page-section {
+  padding: 6rem 0; }
+  .page-section .page-section-heading {
+    font-size: 2.25rem;
+    line-height: 2rem; }
+  @media (min-width: 992px) {
+    .page-section .page-section-heading {
+      font-size: 3rem;
+      line-height: 2.5rem; } }
+
+.divider-custom {
+  margin: 1.25rem 0 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .divider-custom .divider-custom-line {
+    width: 100%;
+    max-width: 7rem;
+    height: 0.25rem;
+    background-color: #2c3e50;
+    border-radius: 1rem;
+    border-color: #2c3e50 !important; }
+    .divider-custom .divider-custom-line:first-child {
+      margin-right: 1rem; }
+    .divider-custom .divider-custom-line:last-child {
+      margin-left: 1rem; }
+  .divider-custom .divider-custom-icon {
+    color: #2c3e50 !important;
+    font-size: 2rem; }
+  .divider-custom.divider-light .divider-custom-line {
+    background-color: #fff; }
+  .divider-custom.divider-light .divider-custom-icon {
+    color: #fff !important; }
+
+.btn-xl {
+  padding: 1rem 1.75rem;
+  font-size: 1.25rem; }
+
+.btn-social {
+  border-radius: 100%;
+  display: inline-flex;
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.25rem;
+  justify-content: center;
+  align-items: center; }
+
+.scroll-to-top {
+  z-index: 1042;
+  right: 1rem;
+  bottom: 1rem;
+  display: none; }
+  .scroll-to-top a {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: rgba(33, 37, 41, 0.5);
+    line-height: 3.1rem; }
+
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   font-weight: 700; }
   #mainNav .navbar-brand {
     color: #fff; }
@@ -7071,13 +7129,127 @@ a.text-dark:hover, a.text-dark:focus {
     #mainNav.navbar-shrink .navbar-brand {
       font-size: 1.5em; } }
 
-/* Import Custom styles */
+.masthead {
+  padding-top: 74px;
+  padding-bottom: 6rem; }
+  .masthead .masthead-heading {
+    font-size: 2.75rem;
+    line-height: 2.75rem; }
+  .masthead .masthead-subheading {
+    font-size: 1.25rem; }
+  .masthead .masthead-avatar {
+    width: 15rem; }
+
+@media (min-width: 992px) {
+  .masthead {
+    padding-top: 104px;
+    padding-bottom: 6rem; }
+    .masthead .masthead-heading {
+      font-size: 4rem;
+      line-height: 3.5rem; }
+    .masthead .masthead-subheading {
+      font-size: 1.5rem; } }
+
+.portfolio {
+  margin-bottom: -30px; }
+  .portfolio .portfolio-item {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    max-width: 25rem;
+    margin-bottom: 30px;
+    border-radius: 0.5rem;
+    overflow: hidden; }
+    .portfolio .portfolio-item .portfolio-item-caption {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.2s ease-in-out;
+      opacity: 0;
+      background-color: rgba(90, 179, 181, 0.9); }
+      .portfolio .portfolio-item .portfolio-item-caption:hover {
+        opacity: 1; }
+      .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+        font-size: 1.5rem; }
+
+.portfolio-modal .portfolio-modal-title {
+  font-size: 2.25rem;
+  line-height: 2rem; }
+  @media (min-width: 992px) {
+    .portfolio-modal .portfolio-modal-title {
+      font-size: 3rem;
+      line-height: 2.5rem; } }
+
+.portfolio-modal .close {
+  position: absolute;
+  z-index: 1;
+  right: 1.5rem;
+  top: 1rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: #5ab3b5;
+  opacity: 1; }
+
+.floating-label-form-group {
+  position: relative;
+  border-bottom: 1px solid #e9ecef; }
+  .floating-label-form-group input,
+  .floating-label-form-group textarea {
+    font-size: 1.5em;
+    position: relative;
+    z-index: 1;
+    padding-right: 0;
+    padding-left: 0;
+    resize: none;
+    border: none;
+    border-radius: 0;
+    background: none;
+    box-shadow: none !important; }
+  .floating-label-form-group label {
+    font-size: 0.85em;
+    line-height: 1.764705882em;
+    position: relative;
+    z-index: 0;
+    top: 2em;
+    display: block;
+    margin: 0;
+    -webkit-transition: top 0.3s ease, opacity 0.3s ease;
+    -moz-transition: top 0.3s ease, opacity 0.3s ease;
+    -ms-transition: top 0.3s ease, opacity 0.3s ease;
+    transition: top 0.3s ease, opacity 0.3s ease;
+    vertical-align: middle;
+    vertical-align: baseline;
+    opacity: 0; }
+  .floating-label-form-group:not(:first-child) {
+    padding-left: 14px;
+    border-left: 1px solid #e9ecef; }
+
+.floating-label-form-group-with-value label {
+  top: 0;
+  opacity: 1; }
+
+.floating-label-form-group-with-focus label {
+  color: #5ab3b5; }
+
+form .row:first-child .floating-label-form-group {
+  border-top: 1px solid #e9ecef; }
+
+.footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #2c3e50;
+  color: #fff; }
+
+.copyright {
+  background-color: #1a252f; }
+
 /* Day 9 Self Portrait 
  * Credit https://codepen.io/acupoftee/full/mYGNbj
  */
 #avatar-wrapper {
   position: relative;
   background: #5ab3b5;
+  width: 100%;
   min-height: 500px; }
   #avatar-wrapper *,
   #avatar-wrapper ::after,
@@ -7096,10 +7268,11 @@ a.text-dark:hover, a.text-dark:focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 100%; }
+  border-radius: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); }
 
 #block-inner-wrapper {
-  background: #5ab3b5;
+  background: #fff;
   width: 300px;
   height: 300px;
   transition: all 0.5s ease; }
@@ -7109,7 +7282,7 @@ a.text-dark:hover, a.text-dark:focus {
   width: 300px;
   height: 300px;
   top: 30px;
-  background: #5ab3b5;
+  background: #fff;
   z-index: -1;
   transform: rotate(45deg);
   transition: all 0.5s ease;
@@ -7120,7 +7293,7 @@ a.text-dark:hover, a.text-dark:focus {
     width: 300px;
     height: 300px;
     border-radius: 100%;
-    background: #5ab3b5;
+    background: #fff;
     transition: all 0.5s ease; }
   .block__avatar-bg-heart:before {
     top: -150px;
@@ -7132,7 +7305,8 @@ a.text-dark:hover, a.text-dark:focus {
 .block__avatar {
   position: relative;
   width: 300px;
-  height: 300px; }
+  height: 300px;
+  animation: avatar-body-easeup 1s ease-in-out alternate infinite; }
 
 .block__avatar-body {
   position: absolute;
@@ -7200,8 +7374,7 @@ a.text-dark:hover, a.text-dark:focus {
   left: calc(50% - 65px);
   top: 12%;
   background: #000;
-  border-radius: 100%;
-  box-shadow: inset 10px -1px #1a1a1a; }
+  border-radius: 100%; }
   .block__avatar-hair::after {
     content: "";
     position: absolute;
@@ -7335,7 +7508,7 @@ a.text-dark:hover, a.text-dark:focus {
     content: "";
     width: 20px;
     height: 20px;
-    background: rgba(181, 18, 49, 0.3);
+    background: rgba(181, 18, 49, 0.2);
     margin: 0 20px;
     border-radius: 100%; }
 

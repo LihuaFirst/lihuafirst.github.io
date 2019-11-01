@@ -3,17 +3,25 @@
 
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap');
 
-/* Variables */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap');
+
+/* Variables: before import Bootstrap */
 @import "base/variables.scss";
 
 // Import Bootstrap
 @import "bootstrap/bootstrap.scss";
 
-/* Import Component styles */
+// Import components styles
+@import "base/page.scss";
+@import "components/divider.scss";
 @import "components/buttons.scss";
 
-/* Import layout styles */
+// Import layout styles
 @import "layout/navbar.scss";
+@import "layout/masthead.scss";
+@import "layout/portfolio.scss";
+@import "layout/contact.scss";
+@import "layout/footer.scss";
 
-/* Import Custom styles */
-@import "components/avatar.scss";
+// Import Custom styles
+@import "custom/avatar.scss";

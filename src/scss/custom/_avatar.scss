@@ -4,7 +4,7 @@
 
 $avatar-bg-color: $primary;
 $avatar-bg-color-alt: pink;
-$avatar-container-color: #5ab3b5;
+$avatar-container-color: #fff;
 $avatar-shirt-color: #6A2B92;
 $avatar-collar-color: #fff;
 $avatar-skin-color: #FBD8CB;
@@ -21,6 +21,7 @@ $avatar-cheeks-color: #b51231;
   
   position: relative;
   background: $avatar-bg-color;
+  width: 100%;
   min-height: 500px;
   &:hover {
     #block-inner-wrapper {
@@ -43,6 +44,7 @@ $avatar-cheeks-color: #b51231;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 100%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
 
 #block-inner-wrapper {
@@ -86,7 +88,7 @@ $avatar-cheeks-color: #b51231;
   position: relative;
   width: 300px;
   height: 300px;
-  //animation: avatar-body-easeup 0.7s ease-in-out alternate infinite;
+  animation: avatar-body-easeup 1s ease-in-out alternate infinite;
 }
 .block__avatar-body {
   position: absolute;
@@ -163,7 +165,7 @@ $avatar-cheeks-color: #b51231;
   top: 12%;
   background: $avatar-hair-color;
   border-radius: 100%;
-  box-shadow: inset 10px -1px lighten($avatar-hair-color, 10%);
+  //box-shadow: inset 10px -1px lighten($avatar-hair-color, 10%);
   // right bang
   &::after {
     content: "";
@@ -320,7 +322,7 @@ $avatar-cheeks-color: #b51231;
     content: "";
     width: 20px;
     height: 20px;
-    background: rgba($avatar-cheeks-color, 0.3);
+    background: rgba($avatar-cheeks-color, 0.2);
     margin: 0 20px;
     border-radius: 100%;
   }
