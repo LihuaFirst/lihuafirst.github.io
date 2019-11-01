@@ -7030,29 +7030,30 @@ a.text-dark:hover, a.text-dark:focus {
 /* Day 9 Self Portrait 
  * Credit https://codepen.io/acupoftee/full/mYGNbj
  */
+#avatar-wrapper {
+  position: relative;
+  background: #5ab3b5;
+  min-height: 500px; }
+  #avatar-wrapper *,
+  #avatar-wrapper ::after,
+  #avatar-wrapper ::before {
+    box-sizing: content-box; }
+  #avatar-wrapper:hover #block-inner-wrapper {
+    background: pink; }
+  #avatar-wrapper:hover .block__avatar-bg-heart {
+    opacity: 1;
+    background: pink; }
+    #avatar-wrapper:hover .block__avatar-bg-heart:before, #avatar-wrapper:hover .block__avatar-bg-heart:after {
+      background: pink; }
+
 .block__container {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
-
-#block__avatar {
-  position: relative;
-  background: #5ab3b5;
-  min-height: 500px; }
-  #block__avatar:hover #block-inner-9 {
-    background: pink; }
-  #block__avatar:hover .block__avatar-bg-heart {
-    opacity: 1;
-    background: pink; }
-    #block__avatar:hover .block__avatar-bg-heart:before, #block__avatar:hover .block__avatar-bg-heart:after {
-      background: pink; }
-
-.block__container--circle {
-  position: absolute;
+  transform: translate(-50%, -50%);
   border-radius: 100%; }
 
-#block-inner-9 {
+#block-inner-wrapper {
   background: #5ab3b5;
   width: 300px;
   height: 300px;
@@ -7086,8 +7087,7 @@ a.text-dark:hover, a.text-dark:focus {
 .block__avatar {
   position: relative;
   width: 300px;
-  height: 300px;
-  animation: avatar-body-easeup 0.7s ease-in-out alternate infinite; }
+  height: 300px; }
 
 .block__avatar-body {
   position: absolute;

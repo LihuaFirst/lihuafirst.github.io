@@ -12,20 +12,18 @@ $avatar-skin-shadow: #ECBCA6;
 $avatar-hair-color: #000;
 $avatar-cheeks-color: #b51231;
 
-.block__container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-
-#block__avatar {
+#avatar-wrapper {
+  *,
+  ::after,
+  ::before {
+    box-sizing: content-box;
+  }
+  
   position: relative;
   background: $avatar-bg-color;
   min-height: 500px;
   &:hover {
-    #block-inner-9 {
+    #block-inner-wrapper {
       background: $avatar-bg-color-alt;
     }
     .block__avatar-bg-heart {
@@ -36,15 +34,18 @@ $avatar-cheeks-color: #b51231;
         background: $avatar-bg-color-alt;
       }
     }
-  }
+  } 
 }
 
-.block__container--circle {
+.block__container {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 100%;
 }
 
-#block-inner-9 {
+#block-inner-wrapper {
   background: $avatar-container-color;
   width: 300px;
   height: 300px;
@@ -85,7 +86,7 @@ $avatar-cheeks-color: #b51231;
   position: relative;
   width: 300px;
   height: 300px;
-  animation: avatar-body-easeup 0.7s ease-in-out alternate infinite;
+  //animation: avatar-body-easeup 0.7s ease-in-out alternate infinite;
 }
 .block__avatar-body {
   position: absolute;
