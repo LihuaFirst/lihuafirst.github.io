@@ -1,0 +1,366 @@
+/* Day 9 Self Portrait 
+ * Credit https://codepen.io/acupoftee/full/mYGNbj
+ */
+
+$avatar-bg-color: $primary;
+$avatar-bg-color-alt: pink;
+$avatar-container-color: #5ab3b5;
+$avatar-shirt-color: #6A2B92;
+$avatar-collar-color: #fff;
+$avatar-skin-color: #FBD8CB;
+$avatar-skin-shadow: #ECBCA6;
+$avatar-hair-color: #000;
+$avatar-cheeks-color: #b51231;
+
+.block__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#block__avatar {
+  position: relative;
+  background: $avatar-bg-color;
+  min-height: 500px;
+  &:hover {
+    #block-inner-9 {
+      background: $avatar-bg-color-alt;
+    }
+    .block__avatar-bg-heart {
+      opacity: 1;
+      background: $avatar-bg-color-alt;
+      &:before,
+      &:after {
+        background: $avatar-bg-color-alt;
+      }
+    }
+  }
+}
+
+.block__container--circle {
+  position: absolute;
+  border-radius: 100%;
+}
+
+#block-inner-9 {
+  background: $avatar-container-color;
+  width: 300px;
+  height: 300px;
+  transition: all 0.5s ease;
+}
+
+.block__avatar-bg-heart {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 30px;
+  background: $avatar-container-color;
+  z-index: -1;
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background: $avatar-container-color;
+    transition: all 0.5s ease;
+  }
+  &:before {
+    top: -150px;
+    left: 0;
+  }
+  &:after {
+    left: -150px;
+    top: 0;
+  }
+}
+
+.block__avatar {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  animation: avatar-body-easeup 0.7s ease-in-out alternate infinite;
+}
+.block__avatar-body {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  left: calc(50% - 30px);
+  top: 210px;
+  background: $avatar-shirt-color;
+  z-index: 2;
+  // left collar
+  &::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 0;
+    right: calc(50% - 10px);
+    top: -20px;
+    border-bottom: 20px solid darken($avatar-collar-color, 2%);
+    border-left: 0 solid transparent;
+    border-right: 15px solid transparent;
+  }
+  // right collar
+  &::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 0;
+    right: 2px;
+    top: -20px;
+    border-bottom: 20px solid darken($avatar-collar-color, 10%);
+    border-left: 15px solid transparent;
+    border-right: 0 solid transparent;
+  }
+}
+
+.block__avatar-shirt-button {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  left: calc(50% - 5px);
+  top: 10px;
+  background: $avatar-collar-color;
+  border-radius: 100%;
+}
+
+.block__avatar-head {
+  position: absolute;
+  width: 90px;
+  height: 110px;
+  left: calc(50% - 45px);
+  top: 70px;
+  background: $avatar-skin-color;
+  border-radius: 40px 40px 80px 80px;
+  z-index: 3;
+  box-shadow: inset -5px -1px $avatar-skin-shadow;
+}
+
+.block__avatar-neck {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  left: calc(50% - 20px);
+  top: 170px;
+  background: $avatar-skin-color;
+  box-shadow: inset 0px 14px 0px 0px darken($avatar-skin-color, 5%);
+  z-index: 1;
+}
+
+.block__avatar-hair {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  left: calc(50% - 65px);
+  top: 12%;
+  background: $avatar-hair-color;
+  border-radius: 100%;
+  box-shadow: inset 10px -1px lighten($avatar-hair-color, 10%);
+  // right bang
+  &::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    left: 60px;
+    top: 20px;
+    transform: rotate(10deg);
+    background: $avatar-hair-color;
+    border-radius: 0 200px 0 200px;
+    z-index: 4;
+  }
+  // left bang
+  &::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    left: 10px;
+    top: 20px;
+    //transform: rotate(10deg);
+    background: $avatar-hair-color;
+    border-radius: 200px 0 200px 0;
+    z-index: 4;
+  }
+}
+
+.block__avatar-hair-back {
+  position: absolute;
+  width: 90px;
+  height: 150px;
+  top: 30%;
+  left: 35%;
+  background: $avatar-hair-color;
+  z-index: 1;
+  // right edge
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100px;
+    top: 35px;
+    right: -15px;
+    border-top: 100px solid $avatar-hair-color;
+    border-right: 20px solid transparent;
+  }
+  // left edge
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100px;
+    top: 35px;
+    left: -15px;
+    border-top: 100px solid $avatar-hair-color;
+    border-left: 20px solid transparent;
+  }
+}
+
+.block__avatar-face {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: calc(50% - 35px);
+  top: calc(50% - 50px);
+  z-index: 5;
+}
+
+.block__avatar-eyes {
+  position: absolute;
+  top: 12px;
+  left: -7px;
+  display: flex;
+  justify-content: space-between;
+  animation: avatar-eye-blink 2.5s infinite;
+  &::before,
+  &::after {
+    display: inline-block;
+    content: "";
+    width: 15px;
+    height: 20px;
+    background: $avatar-hair-color;
+    margin: 0 14px;
+    border-radius: 100%;
+  }
+}
+
+.block__avatar-glasses {
+  position: relative;
+  width: 5px;
+  height: 2px;
+  background: $avatar-shirt-color;
+  left: 6.5%;
+  top: 25px;
+  .block__avatar-glasses-left,
+  .block__avatar-glasses-right {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    border-radius: 20% 20% 40% 35%;
+    border: 2px solid $avatar-shirt-color;
+    left: -42px;
+    top: -20px;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .block__avatar-glasses-right {
+    left: 4px;
+    border-radius: 20% 20% 35% 40%;
+  }
+}
+
+.block__avatar-glasses-shine {
+  position: absolute;
+  &::before, 
+  &::after  {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 100px;
+    background: white;
+    opacity: 0.3;
+    transform: rotate(30deg);
+    top: -25px;
+    left: 5px;
+  }
+  &::after {
+    width: 5px;
+    left: 30px;
+  }
+}
+.block__avatar-mouth {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  top: 50px;
+  left: 20px;
+  background: $avatar-collar-color;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.block__avatar-cheeks {
+  position: absolute;
+  top: 35px;
+  left: -25px;
+  display: flex;
+  justify-content: space-between;
+  &::before,
+  &::after {
+    display: inline-block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: rgba($avatar-cheeks-color, 0.3);
+    margin: 0 20px;
+    border-radius: 100%;
+  }
+}
+
+
+/* Keyframes */
+
+@keyframes avatar-eye-blink {
+  0% {
+    transform: scaleY(1);
+  }
+  18% {
+    transform: scaleY(1);
+  }
+  20% {
+    transform: scaleY(0);
+  }
+  25% {
+    transform: scaleY(1);
+  }
+  38% {
+    transform: scaleY(1);
+  }
+  40% {
+    transform: scaleY(0);
+  }
+  45% {
+    transform: scaleY(1);
+  }
+  80% {
+    transform: scaleY(1);
+  }
+}
+
+
+@keyframes avatar-body-easeup {
+    from {
+        transform: translateY(2%);
+    } 
+    to {
+        transform: translateY(5%);
+    }
+}

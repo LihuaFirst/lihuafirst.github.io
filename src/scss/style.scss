@@ -1,0 +1,18 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700i&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap');
+
+/* Variables */
+@import "base/variables.scss";
+
+// Import Bootstrap
+@import "bootstrap/bootstrap.scss";
+
+/* Import Component styles */
+@import "components/avatar.scss";
+@import "components/buttons.scss";
+
+/* Import layout styles */
+@import "layout/navbar.scss";
+

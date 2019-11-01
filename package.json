@@ -1,0 +1,39 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "1.0.0",
+  "description": "frontend boilerplate",
+  "main": "index.html",
+  "scripts": {
+    "start": "gulp",
+    "sass": "gulp sass",
+    "build": "gulp build"
+  },
+  "author": "Lihua First",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-htmlhint": "^2.2.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-jslint": "^1.0.10",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify-es": "^1.0.4",
+    "jshint": "^2.10.2",
+    "jshint-stylish": "^2.2.1"
+  },
+  "dependencies": {
+    "gulp-changed": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-watch": "^5.0.1"
+  }
+}
