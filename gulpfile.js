@@ -55,7 +55,7 @@ const paths = {
 		output: 'dist/css/'
 	},
 	html: {
-		input: 'scr/*.html',
+		input: 'src/*.html',
 		output: 'dist/'
 	},
 	assets: {
@@ -139,9 +139,12 @@ function copyAssets() {
 // HTML Tasks: copy index.html file
 // FIXME: htmlhint didn't catch error
 function htmlTask() {
-	return src([paths.html.input])
+//	return src([paths.html.input])
+//		.pipe(htmlhint('.htmlhintrc'))
+//		.pipe(dest(paths.html.output))
+//		.pipe(connect.reload());
+  return src('index.html')
 		.pipe(htmlhint('.htmlhintrc'))
-		.pipe(dest(paths.html.output))
 		.pipe(connect.reload());
 };
 
@@ -167,7 +170,7 @@ function connectServer(done) {
 // Watch task: watch SCSS and JS paths for changes
 // If any change, run scss and js tasks simultaneously
 function watchTask(done) {
-	watch(paths.input+'/*.html', htmlTask);
+	watch('index.html', htmlTask);
 	watch(paths.styles.input, series(cssTranspile, cssMinify));
 	watch(paths.scripts.input, series(jsTranspile, jsMinify));
 	done();
@@ -182,7 +185,7 @@ exports.default = series(
 	parallel(cssTranspile, jsTranspile),
 	parallel(cssMinify, jsMinify),
 	parallel(htmlTask, copyAssets),
-	cacheBust,
+	//cacheBust,
 	connectServer,
 	watchTask
 );
