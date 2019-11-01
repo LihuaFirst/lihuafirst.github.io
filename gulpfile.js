@@ -159,7 +159,8 @@ function pugTask() {
 // run a webserver (with Livereload)
 function connectServer(done) {
 	var options = {
-		root: paths.output,
+//		root: paths.output,
+      root: __dirname,
 		port: config.localhostPort,
 		livereload: true		
 	}
