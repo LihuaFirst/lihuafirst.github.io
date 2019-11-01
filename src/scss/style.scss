@@ -10,9 +10,10 @@
 @import "bootstrap/bootstrap.scss";
 
 /* Import Component styles */
-@import "components/avatar.scss";
 @import "components/buttons.scss";
 
 /* Import layout styles */
 @import "layout/navbar.scss";
 
+/* Import Custom styles */
+@import "components/avatar.scss";
