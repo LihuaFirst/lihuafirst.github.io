@@ -7027,6 +7027,9 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+body {
+  position: relative; }
+
 .page-section {
   padding: 6rem 0; }
   .page-section .page-section-heading {
@@ -7276,6 +7279,7 @@ form .row:first-child .floating-label-form-group {
   #avatar-wrapper:hover .block__avatar-shirt-heart {
     top: 0;
     z-index: 1;
+    opacity: 1;
     color: #ffc0cb;
     animation: avatar-heart-pulse 1s 0.5s ease-out infinite; }
 
@@ -7368,7 +7372,8 @@ form .row:first-child .floating-label-form-group {
   font-size: 20px;
   top: -15px;
   left: 35%;
-  z-index: -1; }
+  z-index: -1;
+  opacity: 0; }
 
 .block__avatar-head {
   position: absolute;
@@ -7450,8 +7455,6 @@ form .row:first-child .floating-label-form-group {
 
 .block__avatar-face {
   position: absolute;
-  width: 300px;
-  height: 300px;
   left: calc(50% - 35px);
   top: calc(50% - 50px);
   z-index: 5; }

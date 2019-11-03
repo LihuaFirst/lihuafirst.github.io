@@ -56,6 +56,7 @@ $avatar-cheeks-color: #b51231;
     .block__avatar-shirt-heart {
       top: 0;
       z-index: 1;
+      opacity: 1;
       color: $avatar-bg-color-alt;
       animation: avatar-heart-pulse 1s 0.5s ease-out infinite;
     }
@@ -166,6 +167,7 @@ $avatar-cheeks-color: #b51231;
   top: -15px;
   left: 35%;
   z-index: -1;
+  opacity: 0;
 }
 
 .block__avatar-head {
@@ -262,8 +264,8 @@ $avatar-cheeks-color: #b51231;
 
 .block__avatar-face {
   position: absolute;
-  width: 300px;
-  height: 300px;
+//  width: 300px;
+//  height: 300px;
   left: calc(50% - 35px);
   top: calc(50% - 50px);
   z-index: 5;
