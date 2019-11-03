@@ -51,6 +51,12 @@ $avatar-cheeks-color: #b51231;
     .block__avatar-eyes-shine {
       opacity: 0;
     }
+    .block__avatar-shirt-heart {
+      top: 0;
+      z-index: 1;
+      color: $avatar-bg-color-alt;
+      animation: avatar-heart-pulse 1s 0.5s ease-out infinite;
+    }
   }
 }
 
@@ -149,6 +155,15 @@ $avatar-cheeks-color: #b51231;
   top: 10px;
   background: $avatar-collar-color;
   border-radius: 100%;
+}
+
+.block__avatar-shirt-heart {
+  position: absolute;
+  color: $avatar-shirt-color;
+  font-size: 20px;
+  top: -15px;
+  left: 35%;
+  z-index: -1;
 }
 
 .block__avatar-head {
@@ -400,5 +415,17 @@ $avatar-cheeks-color: #b51231;
   }
   to {
     transform: translateY(5%);
+  }
+}
+
+@keyframes avatar-heart-pulse {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
   }
 }

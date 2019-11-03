@@ -85,9 +85,10 @@ function parseVersion(string) {
 var fileVersion = '-'+ new Date().getTime();
 
 function cacheBust() {
-  return src('index.html')
+  return src('index-src.html')
     .pipe(replace('style.min.css', 'style' + fileVersion + '.min.css'))
     .pipe(replace('main.min.js', 'main' + fileVersion + '.min.js'))
+    .pipe(rename('index.html'))
     .pipe(dest('.'));
 }
 
@@ -155,8 +156,9 @@ function copyAssets() {
 // HTML Tasks: copy index.html file
 // FIXME: htmlhint didn't catch error
 function htmlTask() {
-  return src('index.html')
+  return src('index-src.html')
     .pipe(htmlhint('.htmlhintrc'))
+    .pipe(rename('index.html'))
     .pipe(dest('.'))  
     .pipe(connect.reload());
 };
