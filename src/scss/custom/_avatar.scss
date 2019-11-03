@@ -11,14 +11,12 @@ $avatar-skin-color: #FBD8CB;
 $avatar-skin-shadow: #ECBCA6;
 $avatar-hair-color: #000;
 $avatar-cheeks-color: #b51231;
-
 #avatar-wrapper {
   *,
   ::after,
   ::before {
     box-sizing: content-box;
   }
-  
   position: relative;
   background: $avatar-bg-color;
   width: 100%;
@@ -35,7 +33,25 @@ $avatar-cheeks-color: #b51231;
         background: $avatar-bg-color-alt;
       }
     }
-  } 
+    .block__avatar-cheeks {
+      &::before,
+      &::after {
+        background: rgba($avatar-cheeks-color, 0.4);
+      }
+    }
+    .block__avatar-eyes {
+      left: -12px;
+      &::before,
+      &::after {
+        width: 20px;
+        background: none;
+        box-shadow: inset 0 10px $avatar-hair-color;
+      }
+    }
+    .block__avatar-eyes-shine {
+      opacity: 0;
+    }
+  }
 }
 
 .block__container {
@@ -44,7 +60,7 @@ $avatar-cheeks-color: #b51231;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 100%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 #block-inner-wrapper {
@@ -90,6 +106,7 @@ $avatar-cheeks-color: #b51231;
   height: 300px;
   animation: avatar-body-easeup 1s ease-in-out alternate infinite;
 }
+
 .block__avatar-body {
   position: absolute;
   width: 60px;
@@ -228,8 +245,8 @@ $avatar-cheeks-color: #b51231;
 
 .block__avatar-face {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   left: calc(50% - 35px);
   top: calc(50% - 50px);
   z-index: 5;
@@ -254,12 +271,30 @@ $avatar-cheeks-color: #b51231;
   }
 }
 
+.block__avatar-eyes-shine {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  &::before,
+  &::after {
+    display: inline-block;
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    margin: 0 20px;
+    border-radius: 100%;
+  }
+}
+
 .block__avatar-glasses {
   position: relative;
   width: 5px;
   height: 2px;
   background: $avatar-shirt-color;
-  left: 6.5%;
+  left: 32px;
   top: 25px;
   .block__avatar-glasses-left,
   .block__avatar-glasses-right {
@@ -282,8 +317,8 @@ $avatar-cheeks-color: #b51231;
 
 .block__avatar-glasses-shine {
   position: absolute;
-  &::before, 
-  &::after  {
+  &::before,
+  &::after {
     content: "";
     position: absolute;
     width: 20px;
@@ -299,6 +334,7 @@ $avatar-cheeks-color: #b51231;
     left: 30px;
   }
 }
+
 .block__avatar-mouth {
   position: absolute;
   width: 30px;
@@ -358,12 +394,11 @@ $avatar-cheeks-color: #b51231;
   }
 }
 
-
 @keyframes avatar-body-easeup {
-    from {
-        transform: translateY(2%);
-    } 
-    to {
-        transform: translateY(5%);
-    }
+  from {
+    transform: translateY(2%);
+  }
+  to {
+    transform: translateY(5%);
+  }
 }

@@ -7262,6 +7262,16 @@ form .row:first-child .floating-label-form-group {
     background: pink; }
     #avatar-wrapper:hover .block__avatar-bg-heart:before, #avatar-wrapper:hover .block__avatar-bg-heart:after {
       background: pink; }
+  #avatar-wrapper:hover .block__avatar-cheeks::before, #avatar-wrapper:hover .block__avatar-cheeks::after {
+    background: rgba(181, 18, 49, 0.4); }
+  #avatar-wrapper:hover .block__avatar-eyes {
+    left: -12px; }
+    #avatar-wrapper:hover .block__avatar-eyes::before, #avatar-wrapper:hover .block__avatar-eyes::after {
+      width: 20px;
+      background: none;
+      box-shadow: inset 0 10px #000; }
+  #avatar-wrapper:hover .block__avatar-eyes-shine {
+    opacity: 0; }
 
 .block__container {
   position: absolute;
@@ -7426,8 +7436,8 @@ form .row:first-child .floating-label-form-group {
 
 .block__avatar-face {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   left: calc(50% - 35px);
   top: calc(50% - 50px);
   z-index: 5; }
@@ -7448,12 +7458,27 @@ form .row:first-child .floating-label-form-group {
     margin: 0 14px;
     border-radius: 100%; }
 
+.block__avatar-eyes-shine {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  display: flex;
+  justify-content: space-between; }
+  .block__avatar-eyes-shine::before, .block__avatar-eyes-shine::after {
+    display: inline-block;
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    margin: 0 20px;
+    border-radius: 100%; }
+
 .block__avatar-glasses {
   position: relative;
   width: 5px;
   height: 2px;
   background: #6A2B92;
-  left: 6.5%;
+  left: 32px;
   top: 25px; }
   .block__avatar-glasses .block__avatar-glasses-left,
   .block__avatar-glasses .block__avatar-glasses-right {
