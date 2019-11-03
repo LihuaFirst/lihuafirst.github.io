@@ -11,6 +11,7 @@ $avatar-skin-color: #FBD8CB;
 $avatar-skin-shadow: #ECBCA6;
 $avatar-hair-color: #000;
 $avatar-cheeks-color: #b51231;
+
 #avatar-wrapper {
   *,
   ::after,
@@ -421,11 +422,17 @@ $avatar-cheeks-color: #b51231;
 @keyframes avatar-heart-pulse {
   0% {
     transform: scale(1);
+  }  
+  14% {
+    transform: scale(1.2);
   }
-  30% {
-    transform: scale(1.5);
+  28% {
+    transform: scale(1);
   }
-  100% {
+  42% {
+    transform: scale(1.2);
+  }
+  70% {
     transform: scale(1);
   }
 }
