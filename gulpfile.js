@@ -186,7 +186,7 @@ function connectServer(done) {
 // Watch task: watch SCSS and JS paths for changes
 // If any change, run scss and js tasks simultaneously
 function watchTask(done) {
-  watch('index.html', htmlTask);
+  watch('index-src.html', htmlTask);
   watch(paths.styles.input, series(cssTranspile, cssMinify));
   watch(paths.scripts.input, series(jsTranspile, jsMinify));
   done();

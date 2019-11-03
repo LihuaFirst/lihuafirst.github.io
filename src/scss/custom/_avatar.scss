@@ -3,13 +3,13 @@
  */
 
 $avatar-bg-color: $primary;
-$avatar-bg-color-alt: pink;
-$avatar-container-color: #fff;
-$avatar-shirt-color: #6A2B92;
-$avatar-collar-color: #fff;
+$avatar-bg-color-alt: $pink;
+$avatar-container-color: $white;
+$avatar-shirt-color: $purple;
+$avatar-collar-color: $white;
+$avatar-hair-color: $black;
 $avatar-skin-color: #FBD8CB;
 $avatar-skin-shadow: #ECBCA6;
-$avatar-hair-color: #000;
 $avatar-cheeks-color: #b51231;
 
 #avatar-wrapper {
@@ -22,6 +22,7 @@ $avatar-cheeks-color: #b51231;
   background: $avatar-bg-color;
   width: 100%;
   min-height: 500px;
+  cursor: pointer;
   &:hover {
     #block-inner-wrapper {
       background: $avatar-bg-color-alt;

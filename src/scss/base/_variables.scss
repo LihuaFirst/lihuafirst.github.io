@@ -1,8 +1,14 @@
 /* Variables */
 
-$primary: #5ab3b5;  // teal
-$secondary: #2c3e50;  // dark blue
-$white: #fff; // white
+$white: #fff; 
+$black: #000;
+$pink: #ffc0cb;
+$purple: #6A2B92;
+$teal: #1abc9c; 
+$blue: #347298;
+
+$primary: $purple;
+$secondary: darken($purple, 10%); 
 
 $font-family-sans-serif: 'Lato', "Helvetica Neue", Arial, sans-serif !default;
 $headings-font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif !default;
