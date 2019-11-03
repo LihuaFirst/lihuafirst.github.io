@@ -12,16 +12,6 @@ const config = {
   cacheBust: true // Turn on/off cacheBust tasks
 }
 
-/**
- * File Version
- */
-
-const package = require('./package.json');
-
-function parseVersion(string) {
-  return string.split('.').join('-');
-}
-var fileVersion = config.cacheBust ? '-' + parseVersion(package.version) : '';
 
 // Importing all the Gulp-related packages we want to use
 const replace = require('gulp-replace');
@@ -71,17 +61,17 @@ const paths = {
   }
 };
 
-// Cachebust by Date
-var cbString = new Date().getTime();
+/**
+ * File Version
+ */
 
-function cacheBust() {
-  return src('index.html')
-    .pipe(replace(/cb=\d+/g, 'cb=' + cbString))
-    .pipe(dest(function (file) {
-      return file.base;
-    }));
+const package = require('./package.json');
+
+function parseVersion(string) {
+  return string.split('.').join('-');
 }
-
+// Cachebust by file version
+//var fileVersion = config.cacheBust ? '-' + parseVersion(package.version) : '';
 // Cachebust by Version
 //function cacheBust(){
 //    return src([paths.input + '/index.html'])
@@ -90,6 +80,16 @@ function cacheBust() {
 //        .pipe(dest(paths.output));
 //}
 
+
+// Cachebust by Date
+var fileVersion = '-'+ new Date().getTime();
+
+function cacheBust() {
+  return src('index.html')
+    .pipe(replace('style.min.css', 'style' + fileVersion + '.min.css'))
+    .pipe(replace('main.min.js', 'main' + fileVersion + '.min.js'))
+    .pipe(dest('.'));
+}
 
 // Delete dist directory
 function cleanDist() {
@@ -155,16 +155,10 @@ function copyAssets() {
 // HTML Tasks: copy index.html file
 // FIXME: htmlhint didn't catch error
 function htmlTask() {
-  //	return src([paths.html.input])
-  //		.pipe(htmlhint('.htmlhintrc'))
-  //		.pipe(dest(paths.html.output))
-  //		.pipe(connect.reload());
   return src('index.html')
     .pipe(htmlhint('.htmlhintrc'))
-    .pipe(connect.reload())
-    .pipe(dest(function (file) {
-      return file.base;
-    }));
+    .pipe(dest('.'))  
+    .pipe(connect.reload());
 };
 
 
