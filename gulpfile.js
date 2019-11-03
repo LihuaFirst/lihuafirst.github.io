@@ -39,13 +39,13 @@ const postcss = config.styles ? require('gulp-postcss') : null;
 const paths = {
   input: 'src',
   output: 'dist',
-  scripts: {
-    input: 'src/js/*',
-    output: 'dist/js'
-  },
   styles: {
     input: 'src/scss/**/*.{scss,sass}',
     output: 'dist/css/'
+  },
+  scripts: {
+    input: 'src/js/**/*.js',
+    output: 'dist/js/'
   },
   html: {
     input: 'src/*.html',
@@ -127,7 +127,7 @@ function jsTranspile() {
   if (!config.scripts) return;
 
   return src([paths.scripts.input, '!' + paths.scripts.input + '.min.js'])
-    .pipe(concat('main.js'))
+//    .pipe(concat('main.js'))
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(dest(paths.scripts.output))
