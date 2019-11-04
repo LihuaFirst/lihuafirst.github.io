@@ -1,11 +1,24 @@
 (function($) {
   "use strict"; // Start of use strict
 
-  // Smooth scrolling using jQuery easing
+  /* Smooth scrolling using jQuery easing 
+   * Binding an event handler to all anchors that contain a hash (#), but not necessarily JUST a hash - like href="#" which is typically used in JS...
+   */
+
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+     // Two conditional checks
+     // First condition is replacing the first forward slash (/) in the pathname for the current location and comparing it to the link that's been clicked.    
+     // Second condition is to see if the link matches the current domain    
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {    
+      // this.hash reads the href attribute of this, and gets the part of the URL beginning with #, which is a jquery selector for IDs
       var target = $(this.hash);
+      
+      // check if the element exist
+      // if length equals to 0, query the DOM by name attributes
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      
+      // animation  using the target's offset
+      // return false prevents default behavior
       if (target.length) {
         $('html, body').animate({
           scrollTop: (target.offset().top - 71)
