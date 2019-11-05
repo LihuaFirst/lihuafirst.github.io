@@ -22,7 +22,7 @@ $avatar-cheeks-color: #b51231;
   background: $avatar-bg-color;
   width: 100%;
   min-height: 500px;
-  cursor: pointer;
+  //cursor: pointer;
   &:hover {
     #block-inner-wrapper {
       background: $avatar-bg-color-alt;
@@ -264,10 +264,12 @@ $avatar-cheeks-color: #b51231;
 
 .block__avatar-face {
   position: absolute;
-//  width: 300px;
-//  height: 300px;
-  left: calc(50% - 35px);
-  top: calc(50% - 50px);
+  width: 300px;
+  height: 300px;
+  left: 115px;
+  top: 100px;
+/*  left: calc(50% - 35px);
+  top: calc(50% - 50px);*/
   z-index: 5;
 }
 

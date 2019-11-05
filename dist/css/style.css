@@ -1,6 +1,6 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700i&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap");
 /* Variables: before import Bootstrap */
 /* Variables */
@@ -7137,7 +7137,8 @@ body {
   padding-bottom: 6rem; }
   .masthead .masthead-heading {
     font-size: 2.75rem;
-    line-height: 2.75rem; }
+    line-height: 3rem;
+    font-family: "Pacifico", cursive; }
   .masthead .masthead-subheading {
     font-size: 1.25rem; }
   .masthead .masthead-avatar {
@@ -7149,7 +7150,7 @@ body {
     padding-bottom: 6rem; }
     .masthead .masthead-heading {
       font-size: 4rem;
-      line-height: 3.5rem; }
+      line-height: 4.5rem; }
     .masthead .masthead-subheading {
       font-size: 1.5rem; } }
 
@@ -7253,8 +7254,7 @@ form .row:first-child .floating-label-form-group {
   position: relative;
   background: #6A2B92;
   width: 100%;
-  min-height: 500px;
-  cursor: pointer; }
+  min-height: 500px; }
   #avatar-wrapper *,
   #avatar-wrapper ::after,
   #avatar-wrapper ::before {
@@ -7455,8 +7455,12 @@ form .row:first-child .floating-label-form-group {
 
 .block__avatar-face {
   position: absolute;
-  left: calc(50% - 35px);
-  top: calc(50% - 50px);
+  width: 300px;
+  height: 300px;
+  left: 115px;
+  top: 100px;
+  /*  left: calc(50% - 35px);
+  top: calc(50% - 50px);*/
   z-index: 5; }
 
 .block__avatar-eyes {
