@@ -9,7 +9,7 @@ const config = {
   localhostPort: 8080,
   scripts: true, // Turn on/off script tasks
   styles: true, // Turn on/off styles tasks 
-  cacheBust: true // Turn on/off cacheBust tasks
+  cacheBust: false // Turn on/off cacheBust tasks
 }
 
 
@@ -82,7 +82,7 @@ function parseVersion(string) {
 
 
 // Cachebust by Date
-var fileVersion = '-'+ new Date().getTime();
+var fileVersion = config.cacheBust ? '-'+ new Date().getTime() : '';
 
 function cacheBust() {
   return src('index-src.html')
