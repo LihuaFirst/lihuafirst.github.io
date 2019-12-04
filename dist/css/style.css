@@ -7164,6 +7164,8 @@ body {
     margin-bottom: 30px;
     border-radius: 0.5rem;
     overflow: hidden; }
+    .portfolio .portfolio-item:focus .portfolio-item-caption {
+      opacity: 1; }
     .portfolio .portfolio-item .portfolio-item-caption {
       position: absolute;
       top: 0;

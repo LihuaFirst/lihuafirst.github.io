@@ -9,6 +9,9 @@
     margin-bottom: 30px;
     border-radius: $border-radius;
     overflow: hidden;
+    &:focus .portfolio-item-caption {
+      opacity: 1;  // tab in focus
+    }
     .portfolio-item-caption {
       position: absolute;
       top: 0;
